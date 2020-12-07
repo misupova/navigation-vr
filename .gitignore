@@ -69,6 +69,3 @@ crashlytics-build.properties
 # Local History for Visual Studio Code
 .history/
 
-# Ignore packages
-Assets/Standard Assets/
-

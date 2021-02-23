@@ -10,6 +10,8 @@ public class InputTracker : MonoBehaviour
     // Time interval for movement recording
     public int frameInterfal = 4;
 
+    string XMLFileName = System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".xml";
+
     string getFolderPath()
     {
         string path = Application.dataPath;
@@ -104,7 +106,7 @@ public class InputTracker : MonoBehaviour
         XmlSerializer serialiser = new XmlSerializer(typeof(List<Movement>));
 
         // Create the TextWriter for the serialiser to use
-        TextWriter filestream = new StreamWriter(Path.Combine(getFolderPath(), "test.xml"));
+        TextWriter filestream = new StreamWriter(Path.Combine(getFolderPath(), XMLFileName));
 
         //write to the file
         serialiser.Serialize(filestream, movements);

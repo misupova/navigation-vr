@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UI_InputWindow : MonoBehaviour
 {
+    public static System.Guid playerId = System.Guid.NewGuid();
+
+    private readonly System.Random _random = new System.Random();
+
     private static UI_InputWindow instance;
 
     private Button continueBtn;
@@ -30,6 +35,16 @@ public class UI_InputWindow : MonoBehaviour
 
     private TMP_Dropdown videoGameDropdown;
 
+    private string country;
+
+    private string gender;
+
+    private string age;
+
+    private string playtime;
+
+    private string email;
+
     private void Awake()
     {
         instance = this;
@@ -52,6 +67,8 @@ public class UI_InputWindow : MonoBehaviour
 
         videoGameDropdown = transform.Find("DROPDOWN_003").GetComponent<TMP_Dropdown>();
         videoGameDropdown.options.Clear();
+
+        continueBtn.onClick.AddListener (continueAction);
 
         Hide();
     }
@@ -87,6 +104,30 @@ public class UI_InputWindow : MonoBehaviour
         {
             videoGameDropdown.options.Add(new TMP_Dropdown.OptionData() { text = t });
         }
+    }
+
+    private void continueAction()
+    {
+        country = LocalTexts.country_list[countryDropdown.value];
+        gender = LocalTexts.gender_list[genderDropdown.value];
+        playtime = LocalTexts.play_hours_per_week_list[videoGameDropdown.value];
+        age = transform.Find("INPUT_001").GetComponent<TMP_InputField>().text;
+        email = transform.Find("INPUT_002").GetComponent<TMP_InputField>().text;
+
+        if (age.Length == 0)
+        {
+            UI_Blocker.Show_Static();
+            UI_ErrorWindow.Show_Static();
+        }
+        else
+        {
+            SceneManager.LoadScene(RandomNumber(1, 3));
+        }
+    }
+
+    private int RandomNumber(int min, int max)
+    {
+        return _random.Next(min, max);
     }
 
     private void Show()

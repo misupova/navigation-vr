@@ -122,6 +122,38 @@ public class LocalTexts
         }
     }
 
+    public static string errorText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Lūdzu aizpildīt visas ailes!";
+                case LocalTexts.English:
+                    return "Please fill all fields!";
+                default:
+                    return "Please fill all fields!";
+            }
+        }
+    }
+
+    public static string closeBtnText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Aizvērt";
+                case LocalTexts.English:
+                    return "Close";
+                default:
+                    return "Close";
+            }
+        }
+    }
+
     public static List<string> gender_list
     {
         get

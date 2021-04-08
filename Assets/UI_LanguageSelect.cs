@@ -21,8 +21,8 @@ public class UI_LanguageSelect : MonoBehaviour
     void SelectEnglish()
     {
         Hide();
-        UI_InputWindow.Show_Static();
         LocalTexts.Language = "en";
+        UI_InputWindow.Show_Static();
     }
     
     void SelectLatvian()

@@ -14,13 +14,22 @@ public class UI_LanguageSelect : MonoBehaviour
         englishBtn = transform.Find("englishBtn").GetComponent<Button>();
         latvianBtn = transform.Find("latvianBtn").GetComponent<Button>();
 
-        englishBtn.onClick.AddListener (TaskOnClick);
+        englishBtn.onClick.AddListener(SelectEnglish);
+        latvianBtn.onClick.AddListener(SelectLatvian);
     }
 
-    void TaskOnClick()
+    void SelectEnglish()
     {
         Hide();
         UI_InputWindow.Show_Static();
+        LocalTexts.Language = "en";
+    }
+    
+    void SelectLatvian()
+    {
+        Hide();
+        UI_InputWindow.Show_Static();
+        LocalTexts.Language = "lv";
     }
 
     public void Show()

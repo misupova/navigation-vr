@@ -28,8 +28,8 @@ public class UI_LanguageSelect : MonoBehaviour
     void SelectLatvian()
     {
         Hide();
-        UI_InputWindow.Show_Static();
         LocalTexts.Language = "lv";
+        UI_InputWindow.Show_Static();
     }
 
     public void Show()

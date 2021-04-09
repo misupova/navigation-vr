@@ -114,7 +114,7 @@ public class UI_InputWindow : MonoBehaviour
         age = transform.Find("INPUT_001").GetComponent<TMP_InputField>().text;
         email = transform.Find("INPUT_002").GetComponent<TMP_InputField>().text;
 
-        if (age.Length == 0)
+        if (age.Length == 0 || gender == "---" || playtime == "---")
         {
             UI_Blocker.Show_Static();
             UI_ErrorWindow.Show_Static();

@@ -161,11 +161,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return new List<string>() { "Vīrietis", "Sieviete", "Cits" };
+                    return new List<string>() { "---", "Vīrietis", "Sieviete", "Cits" };
                 case LocalTexts.English:
-                    return new List<string>() { "Man", "Woman", "Other" };
+                    return new List<string>() { "---", "Man", "Woman", "Other" };
                 default:
-                    return new List<string>() { "Man", "Woman", "Other" };
+                    return new List<string>() { "---", "Man", "Woman", "Other" };
             }
         }
     }
@@ -179,6 +179,7 @@ public class LocalTexts
                 case LocalTexts.Latvian:
                     return new List<string>()
                     {
+                        "---",
                         "Vispār nespēlēju",
                         "Mazāk par 1 stundu nedēļā",
                         "1-2 stundas nedēļā",
@@ -190,6 +191,7 @@ public class LocalTexts
                 case LocalTexts.English:
                     return new List<string>()
                     {
+                        "---",
                         "None",
                         "Less than 1 hour a week",
                         "1-2 hours a week",
@@ -201,6 +203,7 @@ public class LocalTexts
                 default:
                     return new List<string>()
                     {
+                        "---",
                         "None",
                         "Less than 1 hour a week",
                         "1-2 hours a week",
@@ -443,6 +446,7 @@ public class LocalTexts
                 case LocalTexts.English:
                     return new List<string>()
                     {
+                        "Latvia",
                         "Afghanistan",
                         "Albania",
                         "Algeria",
@@ -559,7 +563,6 @@ public class LocalTexts
                         "Kuwait",
                         "Kyrgyzstan",
                         "Lao People's Democratic Republic",
-                        "Latvia",
                         "Lebanon",
                         "Lesotho",
                         "Liberia",

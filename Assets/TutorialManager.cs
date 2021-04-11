@@ -1,12 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
 
-    public float waitTime = 2f;
+    public GameObject[] tutorialItems;
+
+    public GameObject UI_RemainingItems;
+
+    public GameObject myDoor;
+
+    [SerializeField]
+    float waitTime = 1f;
 
     private int popUpIndex;
 
@@ -19,6 +27,15 @@ public class TutorialManager : MonoBehaviour
     bool wentRight;
 
     bool wentForward;
+
+    void Awake()
+    {
+        for (int i = 0; i < tutorialItems.Length; i++)
+        {
+            tutorialItems[i].SetActive(false);
+        }
+        UI_RemainingItems.SetActive(false);
+    }
 
     void Update()
     {
@@ -83,6 +100,42 @@ public class TutorialManager : MonoBehaviour
             popUpIndex == 2 // Collect items
         )
         {
+            UI_RemainingItems.SetActive(true);
+            UI_RemainingItems.GetComponentInChildren<TextMeshProUGUI>(true).text =
+                LocalTexts.itemsRemaining[CollectItems.collectedTutorialItems];
+            for (int i = 0; i < tutorialItems.Length; i++)
+            {
+                tutorialItems[i].SetActive(true);
+            }
+            if (CollectItems.collectedTutorialItems == 1)
+            {
+                popUpIndex++;
+            }
+        }
+        else if (
+            popUpIndex == 3 // Now collect all 3 items
+        )
+        {
+            if (CollectItems.collectedTutorialItems < 3)
+            {
+                UI_RemainingItems.GetComponentInChildren<TextMeshProUGUI>(true).text =
+                    LocalTexts.itemsRemaining[CollectItems.collectedTutorialItems];
+            }
+            else
+            {
+                UI_RemainingItems.SetActive(false);
+                popUpIndex++;
+            }
+        }
+        else if (
+            popUpIndex == 4 // Tutorial finished
+        )
+        {
+            myDoor.transform.rotation = Quaternion.Euler(0, 5f, 0);
+            if (CollectItems.tutorialFinished)
+            {
+                popUps[popUpIndex].SetActive(false);
+            }
         }
     }
 }

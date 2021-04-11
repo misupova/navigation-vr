@@ -69,7 +69,7 @@ public class InputTracker : MonoBehaviour
     {
         if (timer % frameInterfal == 0)
         {
-            if (!levelCompleted)
+            if (!levelCompleted && CollectItems.tutorialFinished)
             {
                 cameraTransform = Camera.main.transform;
                 movements.Add(new Movement(cameraTransform.position));
@@ -82,7 +82,6 @@ public class InputTracker : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
 
         // If goal was triggered stop recording
         if (!other.CompareTag("GoalTrigger") || levelCompleted) yield break;

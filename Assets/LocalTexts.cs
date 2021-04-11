@@ -216,6 +216,22 @@ public class LocalTexts
         }
     }
 
+    public static List<string> itemsRemaining
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+                case LocalTexts.English:
+                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+                default:
+                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+            }
+        }
+    }
+
     public static List<string> country_list
     {
         get

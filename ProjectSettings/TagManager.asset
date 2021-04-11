@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GoalTrigger
   - Collectible
+  - TutorialCollectible
   layers:
   - Default
   - TransparentFX

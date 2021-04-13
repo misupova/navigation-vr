@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class InputTracker : MonoBehaviour
 {
@@ -25,6 +28,8 @@ public class InputTracker : MonoBehaviour
                 time,
                 distance;
 
+        public int currentItem;
+
         //default constructor
         public Movement()
         {
@@ -37,6 +42,7 @@ public class InputTracker : MonoBehaviour
         {
             this.position = position;
             this.time = Time.timeSinceLevelLoad;
+            this.currentItem = CollectItems.collectedItems;
         }
 
         public void setDistance(float distance)
@@ -52,8 +58,6 @@ public class InputTracker : MonoBehaviour
     {
         Transform playerTrans = this.transform;
         Transform camera = playerTrans.Find("FirstPersonCharacter");
-
-        // Debug.Log(getFolderPath());
     }
 
     int timer = 0;
@@ -86,7 +90,6 @@ public class InputTracker : MonoBehaviour
 
         levelCompleted = true;
 
-        // Calculate travelled distance
         for (int i = 0; i < movements.Count; i++)
         {
             if (i == 0)
@@ -113,7 +116,8 @@ public class InputTracker : MonoBehaviour
         _playerData.playerId = UI_InputWindow.playerId;
         _playerData.XMLString = XMLString;
         _playerData.isFinished = true;
-        _playerData.currentCollectedItems = CollectItems.collectedItems;
+        _playerData.createdAt = DateTime.Now.ToString();
+        _playerData.level = SceneManager.GetActiveScene().name;
 
         StartCoroutine(Upload(_playerData.Stringify(),
         result =>

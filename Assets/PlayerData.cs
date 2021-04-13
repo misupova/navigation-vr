@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using UnityEngine;
 
 public class PlayerData
@@ -10,11 +8,10 @@ public class PlayerData
 
     public string XMLString;
 
-    public int currentCollectedItems;
-
-    public DateTime localDate; // = DateTime.Now;
+    public string createdAt;
 
     public bool isFinished;
+    public string level;
 
     public string Stringify()
     {

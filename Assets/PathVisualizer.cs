@@ -16,7 +16,7 @@ public class PathVisualizer : MonoBehaviour
     void Start()
     {
         string path = Application.dataPath;
-        path = Path.Combine(path, "MovementLogs", "2021_03_08_22_25_28.xml");
+        path = Path.Combine(path, "MovementLogs", "2021_04_11_23_19_22.xml");
         System.Xml.Serialization.XmlSerializer reader =
     new System.Xml.Serialization.XmlSerializer(typeof(List<InputTracker.Movement>));
         System.IO.StreamReader file = new System.IO.StreamReader(

@@ -4,8 +4,10 @@ const BodyParser = require('body-parser')
 require('dotenv').config()
 
 const server = Express()
-server.use(BodyParser.json())
-server.use(BodyParser.urlencoded({ extended: true }))
+server.use(BodyParser.json({ limit: '50mb' }));
+server.use(BodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
+server.use(Express.json({limit: '50mb'}));
+server.use(Express.urlencoded({limit: '50mb'}));
 
 const client = new MongoClient(process.env.DB_HOST, {
   useNewUrlParser: true,

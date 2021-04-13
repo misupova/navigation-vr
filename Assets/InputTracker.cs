@@ -1,33 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using UnityEngine;
+using UnityEngine.Networking;
 
 public class InputTracker : MonoBehaviour
 {
     // Time interval for movement recording
     public int frameInterfal = 4;
 
-    string XMLFileName = System.DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + ".xml";
+    private string XMLString;
 
-    string getFolderPath()
-    {
-        string path = Application.dataPath;
-        path = Path.Combine(path, "MovementLogs");
-
-        // Create log directory if doesn't exist
-        if (!Directory.Exists(path))
-            Directory.CreateDirectory(path);
-
-        return path;
-    }
+    private PlayerData _playerData;
 
     public class Movement
     {
         public Vector3 position;
-        public float time, distance;
+
+        public float
+
+                time,
+                distance;
 
         //default constructor
         public Movement()
@@ -36,6 +32,7 @@ public class InputTracker : MonoBehaviour
             this.time = 0f;
             this.distance = 0f;
         }
+
         public Movement(Vector3 position)
         {
             this.position = position;
@@ -46,24 +43,27 @@ public class InputTracker : MonoBehaviour
         {
             this.distance = distance;
         }
-
     }
 
-
     List<Movement> movements = new List<Movement>();
+
     // Start is called before the first frame update
     void Start()
     {
         Transform playerTrans = this.transform;
         Transform camera = playerTrans.Find("FirstPersonCharacter");
 
-        Debug.Log(getFolderPath());
+        // Debug.Log(getFolderPath());
     }
 
     int timer = 0;
+
     Transform cameraTransform;
+
     int currentMovementIndex = 0;
+
     bool levelCompleted = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -77,19 +77,16 @@ public class InputTracker : MonoBehaviour
             }
         }
         timer++;
-
     }
 
     IEnumerator OnTriggerEnter(Collider other)
     {
-
         // If goal was triggered stop recording
         if (!other.CompareTag("GoalTrigger") || levelCompleted) yield break;
 
         levelCompleted = true;
 
         // Calculate travelled distance
-
         for (int i = 0; i < movements.Count; i++)
         {
             if (i == 0)
@@ -98,20 +95,59 @@ public class InputTracker : MonoBehaviour
             }
             else
             {
-                movements[i].setDistance(Vector3.Distance(movements[i].position, movements[i-1].position));
+                movements[i].setDistance(Vector3.Distance(movements[i].position, movements[i - 1].position));
             }
         }
 
-        XmlSerializer serialiser = new XmlSerializer(typeof(List<Movement>));
+        XmlSerializer serialiser = new XmlSerializer(typeof (List<Movement>));
 
-        // Create the TextWriter for the serialiser to use
-        TextWriter filestream = new StreamWriter(Path.Combine(getFolderPath(), XMLFileName));
+        // Create the StringWriter for the serialiser to use
+        var sw = new StringWriter();
 
-        //write to the file
-        serialiser.Serialize(filestream, movements);
+        //write to the variable
+        serialiser.Serialize (sw, movements);
+        XMLString = sw.ToString();
 
-        // Close the file
-        filestream.Close();
+        _playerData = new PlayerData();
+
+        _playerData.playerId = UI_InputWindow.playerId;
+        _playerData.XMLString = XMLString;
+        _playerData.isFinished = true;
+        _playerData.currentCollectedItems = CollectItems.collectedItems;
+
+        StartCoroutine(Upload(_playerData.Stringify(),
+        result =>
+        {
+            Debug.Log (result);
+        }));
+    }
+
+    IEnumerator Upload(string profile, System.Action<bool> callback = null)
+    {
+        using (UnityWebRequest request = new UnityWebRequest("http://localhost:3000/movement_data", "POST"))
+        {
+            request.SetRequestHeader("Content-Type", "application/json");
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(profile);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+
+            yield return request.SendWebRequest();
+
+            if (request.isNetworkError || request.isHttpError)
+            {
+                Debug.Log(request.error);
+                if (callback != null)
+                {
+                    callback.Invoke(false);
+                }
+            }
+            else
+            {
+                if (callback != null)
+                {
+                    callback.Invoke(request.downloadHandler.text != "{}");
+                }
+            }
+        }
     }
 }
-

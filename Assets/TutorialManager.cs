@@ -16,7 +16,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField]
     float waitTime = 1f;
 
-    private int popUpIndex;
+    private int popUpIndex = 4;
 
     bool mouseMovedLeft;
 

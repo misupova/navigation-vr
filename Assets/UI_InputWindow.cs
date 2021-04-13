@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UI_InputWindow : MonoBehaviour
 {
-    public static System.Guid playerId = System.Guid.NewGuid();
+    public static string playerId = System.Guid.NewGuid().ToString();
 
     private readonly System.Random _random = new System.Random();
 
@@ -48,6 +48,7 @@ public class UI_InputWindow : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
 
         STRING_001 = transform.Find("STRING_001").GetComponent<TextMeshProUGUI>();
         STRING_002 = transform.Find("STRING_002").GetComponent<TextMeshProUGUI>();

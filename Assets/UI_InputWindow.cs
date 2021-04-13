@@ -35,15 +35,15 @@ public class UI_InputWindow : MonoBehaviour
 
     private TMP_Dropdown videoGameDropdown;
 
-    private string country;
+    public static string country;
 
-    private string gender;
+    public static string gender;
 
-    private string age;
+    public static string age;
 
-    private string playtime;
+    public static string playtime;
 
-    private string email;
+    public static string email;
 
     private void Awake()
     {

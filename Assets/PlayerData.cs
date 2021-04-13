@@ -11,7 +11,18 @@ public class PlayerData
     public string createdAt;
 
     public bool isFinished;
+
     public string level;
+
+    public string country;
+
+    public string gender;
+
+    public string age;
+
+    public string playtime;
+
+    public string email;
 
     public string Stringify()
     {

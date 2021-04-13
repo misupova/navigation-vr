@@ -118,6 +118,11 @@ public class InputTracker : MonoBehaviour
         _playerData.isFinished = true;
         _playerData.createdAt = DateTime.Now.ToString();
         _playerData.level = SceneManager.GetActiveScene().name;
+        _playerData.country = UI_InputWindow.country;
+        _playerData.gender = UI_InputWindow.gender;
+        _playerData.age = UI_InputWindow.age;
+        _playerData.playtime = UI_InputWindow.playtime;
+        _playerData.email = UI_InputWindow.email;
 
         StartCoroutine(Upload(_playerData.Stringify(),
         result =>

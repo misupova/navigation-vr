@@ -7,3 +7,12 @@ services:
     build: .
     ports:
       - "8080:80"
+  node:
+    container_name: node-server
+    image: node-server
+    build: './node'
+    volumes:
+      - .:/src
+    command: npm start
+    ports:
+      - "3000:3000"

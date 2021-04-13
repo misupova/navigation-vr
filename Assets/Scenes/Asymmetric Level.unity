@@ -54950,12 +54950,17 @@ PrefabInstance:
     - target: {fileID: 4246525363392809660, guid: 3e4e287c1c4809c43b4d910198d80664,
         type: 3}
       propertyPath: m_RunSpeed
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4246525363392809660, guid: 3e4e287c1c4809c43b4d910198d80664,
         type: 3}
       propertyPath: m_WalkSpeed
-      value: 7
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4246525363392809660, guid: 3e4e287c1c4809c43b4d910198d80664,
+        type: 3}
+      propertyPath: m_RunstepLenghten
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4246525363393448604, guid: 3e4e287c1c4809c43b4d910198d80664,
         type: 3}

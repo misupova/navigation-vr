@@ -12,12 +12,15 @@ const client = new MongoClient(process.env.DB_HOST, {
   useUnifiedTopology: true,
 })
 
+var collection;
+
 server.post('/movement_data', async (request, response, next) => {
   try {
     let result = await collection.insertOne(request.body)
 
     response.send(result)
   } catch (e) {
+	  console.log(e);
     response.status(500).send({ message: e.message })
   }
 })
@@ -26,7 +29,7 @@ server.listen('3000', async () => {
   try {
     await client.connect()
 
-    const collection = client.db('navigation-vr').collection('movement_data')
+    collection = client.db('navigation-vr').collection('movement_data')
 
     console.log('Listening at :3000...')
   } catch (e) {

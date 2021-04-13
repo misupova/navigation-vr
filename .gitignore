@@ -72,3 +72,7 @@ crashlytics-build.properties
 # Ignore movement logs
 MovementLogs/
 
+# Node.js
+node_modules/
+.env
+

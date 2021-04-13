@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  webgl:
+    container_name: unity-webgl-navigation
+    image: unity-webgl-navigation
+    build: .
+    ports:
+      - "8080:80"

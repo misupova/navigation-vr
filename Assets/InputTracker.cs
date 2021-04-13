@@ -19,6 +19,8 @@ public class InputTracker : MonoBehaviour
 
     private PlayerData _playerData;
 
+    public GameObject UI_ThankYou;
+
     public class Movement
     {
         public Vector3 position;
@@ -56,6 +58,7 @@ public class InputTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UI_ThankYou.SetActive(false);
         Transform playerTrans = this.transform;
         Transform camera = playerTrans.Find("FirstPersonCharacter");
     }
@@ -128,6 +131,7 @@ public class InputTracker : MonoBehaviour
         result =>
         {
             Debug.Log (result);
+            UI_ThankYou.SetActive(true);
         }));
     }
 

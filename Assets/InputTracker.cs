@@ -137,7 +137,7 @@ public class InputTracker : MonoBehaviour
 
     IEnumerator Upload(string profile, System.Action<bool> callback = null)
     {
-        using (UnityWebRequest request = new UnityWebRequest("http://localhost:3000/movement_data", "POST"))
+        using (UnityWebRequest request = new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data", "POST"))
         {
             request.SetRequestHeader("Content-Type", "application/json");
             byte[] bodyRaw = Encoding.UTF8.GetBytes(profile);

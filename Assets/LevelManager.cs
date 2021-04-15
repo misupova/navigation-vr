@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     int currentLevel;
+
     int maxLevel;
 
     // Start is called before the first frame update
@@ -20,21 +21,23 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int nextLevel;
-
-        if (Input.GetKey(KeyCode.L))
+        if (Debug.isDebugBuild)
         {
-            if (currentLevel < maxLevel)
+            int nextLevel;
+
+            if (Input.GetKey(KeyCode.L))
             {
-                nextLevel = currentLevel + 1;
+                if (currentLevel < maxLevel)
+                {
+                    nextLevel = currentLevel + 1;
+                }
+                else
+                {
+                    nextLevel = 0;
+                }
+
+                SceneManager.LoadScene (nextLevel);
             }
-            else
-            {
-                nextLevel = 0;
-            }
-            
-            SceneManager.LoadScene(nextLevel);
-           
         }
     }
 }

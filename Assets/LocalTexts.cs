@@ -286,7 +286,7 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
+                    return new List<string>() { "3/3 objekti palikuši", "2/3 objekti palikuši", "1/3 objekts palicis" };
                 case LocalTexts.English:
                     return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
                 default:

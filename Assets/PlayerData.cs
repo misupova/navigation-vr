@@ -24,6 +24,8 @@ public class PlayerData
 
     public string email;
 
+    public string education;
+
     public string Stringify()
     {
         return JsonUtility.ToJson(this);

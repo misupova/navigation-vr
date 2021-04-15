@@ -49,6 +49,8 @@ public class UI_InputWindow : MonoBehaviour
 
     public static string email;
 
+    public static string education;
+
     private void Awake()
     {
         instance = this;
@@ -124,10 +126,11 @@ public class UI_InputWindow : MonoBehaviour
         country = LocalTexts.country_list[countryDropdown.value];
         gender = LocalTexts.gender_list[genderDropdown.value];
         playtime = LocalTexts.play_hours_per_week_list[videoGameDropdown.value];
+        education = LocalTexts.education_list[educationDropdown.value];
         age = transform.Find("INPUT_001").GetComponent<TMP_InputField>().text;
         email = transform.Find("INPUT_002").GetComponent<TMP_InputField>().text;
 
-        if (age.Length == 0 || gender == "---" || playtime == "---")
+        if (age.Length == 0 || gender == "---" || playtime == "---" || education == "---")
         {
             UI_Blocker.Show_Static();
             UI_ErrorWindow.Show_Static();

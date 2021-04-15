@@ -124,6 +124,7 @@ public class InputTracker : MonoBehaviour
         _playerData.country = UI_InputWindow.country;
         _playerData.gender = UI_InputWindow.gender;
         _playerData.age = UI_InputWindow.age;
+        _playerData.education = UI_InputWindow.education;
         _playerData.playtime = UI_InputWindow.playtime;
         _playerData.email = UI_InputWindow.email;
 

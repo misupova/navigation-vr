@@ -17,11 +17,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Sveikīīīīī";
+                    return "Sveicināti! Es esmu Marija Isupova, Latvijas Universitātes Datorikas fakultātes maģistrantūras studente. Es veicu eksperimentu par telpas formas ietekmi uz navigācijas spējām, un šajā eksperimentā es arī aicinu Jūs piedalīties.\n\nEksperimenta mērķis ir atrast labirintā 3 paslēptus objektus, un pēc tam atgriezties starta punktā. Pirms paša eksperimenta uzsākšanas notiks īsa apmācība, kuras gaitā Jūs tiksiet iepazīstināti ar visu nepieciešamo informāciju. Pats eksperiments neaizņems vairāk par 10 minūtēm.\n\nLūdzu, aizpildiet īso anķetu. Ja vēlaties, varat atstāt savu e-pasta adresi, lai saņemtu pētījuma rezultātus.";
                 case LocalTexts.English:
-                    return "Hello";
+                    return "Hello! I am Maria Isupova, Master's student from University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the labyrinth and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the shortr questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
                 default:
-                    return "Hello";
+                    return "Hello! I am Maria Isupova, Master's student from University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the labyrinth and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the shortr questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
             }
         }
     }
@@ -81,11 +81,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Spēlēšanas stundas nedēļā";
+                    return "Videospēļu spēlēšanas stundas nedēļā (arī uz mobīlā telefona)";
                 case LocalTexts.English:
-                    return "Play time per week";
+                    return "Videogame play time per week (including mobile games)";
                 default:
-                    return "Play time per week";
+                    return "Videogame play time per week (including mobile games)";
             }
         }
     }
@@ -97,11 +97,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "E-pasts";
+                    return "E-pasts (nav obligāti)";
                 case LocalTexts.English:
-                    return "E-mail";
+                    return "E-mail (optional)";
                 default:
-                    return "E-mail";
+                    return "E-mail (optional)";
             }
         }
     }
@@ -239,7 +239,8 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return new List<string>()                     {
+                    return new List<string>()
+                    {
                         "---",
                         "Zemāka par vidusskolas izglītību",
                         "Vidējā izglītība",
@@ -249,7 +250,7 @@ public class LocalTexts
                         "Maģistra grāds",
                         "Doktora grāds",
                         "2. līmeņa augstākā profesionālā izglītība"
-                    };;
+                    };
                 case LocalTexts.English:
                     return new List<string>()
                     {
@@ -264,7 +265,8 @@ public class LocalTexts
                         "Professional degree"
                     };
                 default:
-                    return new List<string>()                     {
+                    return new List<string>()
+                    {
                         "---",
                         "Less than high school",
                         "High school graduate",
@@ -274,7 +276,7 @@ public class LocalTexts
                         "Master’s degree",
                         "Doctorate",
                         "Professional degree"
-                    };;
+                    };
             }
         }
     }
@@ -291,6 +293,118 @@ public class LocalTexts
                     return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
                 default:
                     return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
+            }
+        }
+    }
+
+    public static string UI_MoveMouseText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Paskaties apkārt, izmantojot peli.";
+                case LocalTexts.English:
+                    return "Look around by moving the mouse.";
+                default:
+                    return "Look around by moving the mouse.";
+            }
+        }
+    }
+
+    public static string UI_MoveAroundText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Izmantojiet W A S D pogas (uz priekšu, pa labi, atpakaļ, pa kreisi atbilstoši) vai pogas ar bultām, lai pārvietotos.";
+                case LocalTexts.English:
+                    return "Use W A S D keys (forward, right, backward and left accordingly) or arrow keys to move around.";
+                default:
+                    return "Use W A S D keys (forward, right, backward and left accordingly) or arrow keys to move around.";
+            }
+        }
+    }
+
+    public static string UI_TouchText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Eksperimenta gaitā būs nepieciešams labirintā atrast 3 objektus un pieskarties tiem. Pamēģiniet pieskarties vienam no objektiem.";
+                case LocalTexts.English:
+                    return "During the experiment you would need to collect 3 items in the labyrinth and touch them. Try to touch one of the objects in this room.";
+                default:
+                    return "During the experiment you would need to collect 3 items in the labyrinth and touch them. Try to touch one of the objects in this room.";
+            }
+        }
+    }
+
+    public static string UI_CollectAllText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Ļoti labi! Tagad pieskarieties visiem 3 objektiem šajā telpā.";
+                case LocalTexts.English:
+                    return "Good! Now touch all 3 objects in this room.";
+                default:
+                    return "Good! Now touch all 3 objects in this room.";
+            }
+        }
+    }
+
+    public static string UI_TutorialFinishedText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Apmācība ir pabeigta! Eksperiments sāksies tajā brīdī, kad iziesiet ārā no durvīm. Atcerieties, ka mērķis ir atrast labirintā visus 3 objektus un atgriezties atpakaļ. Laiks nav ierobežots.";
+                case LocalTexts.English:
+                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this labyrinth and to return back. There is no time limit.";
+                default:
+                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this labyrinth and to return back. There is no time limit.";
+            }
+        }
+    }
+
+    public static string UI_ReturnBackText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Visi 3 objekti ir atrasti! Tagad jāatgriežas starta punktā.";
+                case LocalTexts.English:
+                    return "All objects are found! Now return to the starting point.";
+                default:
+                    return "All objects are found! Now return to the starting point.";
+            }
+        }
+    }
+
+    public static string UI_ThankYouText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Uzdevums ir veiksmīgi pabeigts! Paldies par piedalīšanos eksperimentā!";
+                case LocalTexts.English:
+                    return "The task is finished succesfully! Thank you for participating! You can close the window now.";
+                default:
+                    return "The task is finished succesfully! Thank you for participating! You can close the window now.";
             }
         }
     }

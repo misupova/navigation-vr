@@ -28,6 +28,20 @@ public class TutorialManager : MonoBehaviour
 
     bool wentForward;
 
+    TextMeshProUGUI UI_MoveMouseText;
+
+    TextMeshProUGUI UI_MoveAroundText;
+
+    TextMeshProUGUI UI_TouchText;
+
+    TextMeshProUGUI UI_CollectAllText;
+
+    TextMeshProUGUI UI_TutorialFinishedText;
+
+    TextMeshProUGUI UI_ReturnBackText;
+
+    TextMeshProUGUI UI_ThankYouText;
+
     void Awake()
     {
         for (int i = 0; i < tutorialItems.Length; i++)
@@ -35,6 +49,15 @@ public class TutorialManager : MonoBehaviour
             tutorialItems[i].SetActive(false);
         }
         UI_RemainingItems.SetActive(false);
+
+        UI_MoveMouseText = GameObject.Find("UI_MoveMouse").GetComponentInChildren<TextMeshProUGUI>();
+        UI_MoveAroundText = GameObject.Find("UI_MoveAround").GetComponentInChildren<TextMeshProUGUI>();
+        UI_TouchText = GameObject.Find("UI_Touch").GetComponentInChildren<TextMeshProUGUI>();
+        UI_CollectAllText = GameObject.Find("UI_CollectAll").GetComponentInChildren<TextMeshProUGUI>();
+        UI_TutorialFinishedText = GameObject.Find("UI_TutorialFinished").GetComponentInChildren<TextMeshProUGUI>();
+        UI_ReturnBackText = GameObject.Find("UI_ReturnBack").GetComponentInChildren<TextMeshProUGUI>();
+        UI_ThankYouText = GameObject.Find("UI_ThankYou").GetComponentInChildren<TextMeshProUGUI>();
+        CreateLocalTexts();
     }
 
     void Update()
@@ -137,5 +160,16 @@ public class TutorialManager : MonoBehaviour
                 popUps[popUpIndex].SetActive(false);
             }
         }
+    }
+
+    private void CreateLocalTexts()
+    {
+        UI_MoveMouseText.text = LocalTexts.UI_MoveMouseText;
+        UI_MoveAroundText.text = LocalTexts.UI_MoveAroundText;
+        UI_TouchText.text = LocalTexts.UI_TouchText;
+        UI_CollectAllText.text = LocalTexts.UI_CollectAllText;
+        UI_TutorialFinishedText.text = LocalTexts.UI_TutorialFinishedText;
+        UI_ReturnBackText.text = LocalTexts.UI_ReturnBackText;
+        UI_ThankYouText.text = LocalTexts.UI_ThankYouText;
     }
 }

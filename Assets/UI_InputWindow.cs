@@ -27,6 +27,8 @@ public class UI_InputWindow : MonoBehaviour
 
     private TextMeshProUGUI STRING_006;
 
+    private TextMeshProUGUI STRING_007;
+
     private TextMeshProUGUI continueBtnText;
 
     private TMP_Dropdown countryDropdown;
@@ -34,6 +36,8 @@ public class UI_InputWindow : MonoBehaviour
     private TMP_Dropdown genderDropdown;
 
     private TMP_Dropdown videoGameDropdown;
+
+    private TMP_Dropdown educationDropdown;
 
     public static string country;
 
@@ -49,13 +53,13 @@ public class UI_InputWindow : MonoBehaviour
     {
         instance = this;
 
-
         STRING_001 = transform.Find("STRING_001").GetComponent<TextMeshProUGUI>();
         STRING_002 = transform.Find("STRING_002").GetComponent<TextMeshProUGUI>();
         STRING_003 = transform.Find("STRING_003").GetComponent<TextMeshProUGUI>();
         STRING_004 = transform.Find("STRING_004").GetComponent<TextMeshProUGUI>();
         STRING_005 = transform.Find("STRING_005").GetComponent<TextMeshProUGUI>();
         STRING_006 = transform.Find("STRING_006").GetComponent<TextMeshProUGUI>();
+        STRING_007 = transform.Find("STRING_007").GetComponent<TextMeshProUGUI>();
 
         continueBtn = transform.Find("continueBtn").GetComponent<Button>();
         continueBtnText = transform.Find("continueBtn").GetComponentInChildren<TextMeshProUGUI>();
@@ -68,6 +72,9 @@ public class UI_InputWindow : MonoBehaviour
 
         videoGameDropdown = transform.Find("DROPDOWN_003").GetComponent<TMP_Dropdown>();
         videoGameDropdown.options.Clear();
+
+        educationDropdown = transform.Find("DROPDOWN_004").GetComponent<TMP_Dropdown>();
+        educationDropdown.options.Clear();
 
         continueBtn.onClick.AddListener (continueAction);
 
@@ -90,6 +97,7 @@ public class UI_InputWindow : MonoBehaviour
         STRING_004.text = LocalTexts.STRING_004;
         STRING_005.text = LocalTexts.STRING_005;
         STRING_006.text = LocalTexts.STRING_006;
+        STRING_007.text = LocalTexts.STRING_007;
 
         continueBtnText.text = LocalTexts.continueBtnText;
 
@@ -104,6 +112,10 @@ public class UI_InputWindow : MonoBehaviour
         foreach (string t in LocalTexts.play_hours_per_week_list)
         {
             videoGameDropdown.options.Add(new TMP_Dropdown.OptionData() { text = t });
+        }
+        foreach (string t in LocalTexts.education_list)
+        {
+            educationDropdown.options.Add(new TMP_Dropdown.OptionData() { text = t });
         }
     }
 

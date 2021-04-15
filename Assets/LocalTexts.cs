@@ -106,6 +106,22 @@ public class LocalTexts
         }
     }
 
+    public static string STRING_007
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Augstākais iegūtais izglītības līmenis";
+                case LocalTexts.English:
+                    return "Highest level of education completed";
+                default:
+                    return "Highest level of education completed";
+            }
+        }
+    }
+
     public static string continueBtnText
     {
         get
@@ -216,6 +232,53 @@ public class LocalTexts
         }
     }
 
+    public static List<string> education_list
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return new List<string>()                     {
+                        "---",
+                        "Zemāka par vidusskolas izglītību",
+                        "Vidējā izglītība",
+                        "Nepabeigta augstākā izglītība",
+                        "Arodizglītība vai profesionālā vidējā izglītība",
+                        "Bakalaura grāds",
+                        "Maģistra grāds",
+                        "Doktora grāds",
+                        "2. līmeņa augstākā profesionālā izglītība"
+                    };;
+                case LocalTexts.English:
+                    return new List<string>()
+                    {
+                        "---",
+                        "Less than high school",
+                        "High school graduate",
+                        "Some college credit, no degree",
+                        "Technical or occupational certificate",
+                        "Bachelor’s degree",
+                        "Master’s degree",
+                        "Doctorate",
+                        "Professional degree"
+                    };
+                default:
+                    return new List<string>()                     {
+                        "---",
+                        "Less than high school",
+                        "High school graduate",
+                        "Some college credit, no degree",
+                        "Technical or occupational certificate",
+                        "Bachelor’s degree",
+                        "Master’s degree",
+                        "Doctorate",
+                        "Professional degree"
+                    };;
+            }
+        }
+    }
+
     public static List<string> itemsRemaining
     {
         get
@@ -223,11 +286,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+                    return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
                 case LocalTexts.English:
-                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+                    return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
                 default:
-                    return new List<string>() { "3/3 items remaining",  "2/3 items remaining", "1/3 items remaining"};
+                    return new List<string>() { "3/3 items remaining", "2/3 items remaining", "1/3 items remaining" };
             }
         }
     }

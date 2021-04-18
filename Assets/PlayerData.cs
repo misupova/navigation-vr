@@ -26,6 +26,10 @@ public class PlayerData
 
     public string education;
 
+    public string colorblindness;
+
+    public string navigationTools;
+
     public string Stringify()
     {
         return JsonUtility.ToJson(this);

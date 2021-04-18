@@ -16,10 +16,8 @@ public class InputTracker : MonoBehaviour
     public int frameInterfal = 4;
 
     private string XMLString;
-
     private PlayerData _playerData;
 
-    public GameObject UI_ThankYou;
 
     public class Movement
     {
@@ -58,7 +56,6 @@ public class InputTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UI_ThankYou.SetActive(false);
         Transform playerTrans = this.transform;
         Transform camera = playerTrans.Find("FirstPersonCharacter");
     }
@@ -114,26 +111,24 @@ public class InputTracker : MonoBehaviour
         serialiser.Serialize (sw, movements);
         XMLString = sw.ToString();
 
+        
+
         _playerData = new PlayerData();
 
-        _playerData.playerId = UI_InputWindow.playerId;
+        _playerData.playerId = UI_InfoWindow.playerId;
         _playerData.XMLString = XMLString;
         _playerData.isFinished = true;
         _playerData.createdAt = DateTime.Now.ToString();
         _playerData.level = SceneManager.GetActiveScene().name;
-        _playerData.country = UI_InputWindow.country;
-        _playerData.gender = UI_InputWindow.gender;
-        _playerData.age = UI_InputWindow.age;
-        _playerData.education = UI_InputWindow.education;
-        _playerData.playtime = UI_InputWindow.playtime;
-        _playerData.email = UI_InputWindow.email;
 
         StartCoroutine(Upload(_playerData.Stringify(),
         result =>
         {
             Debug.Log (result);
-            UI_ThankYou.SetActive(true);
+            SceneManager.LoadScene(3);
         }));
+
+        
     }
 
     IEnumerator Upload(string profile, System.Action<bool> callback = null)

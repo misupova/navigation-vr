@@ -17,11 +17,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Sveicināti! Es esmu Marija Isupova, Latvijas Universitātes Datorikas fakultātes maģistrantūras studente. Es veicu eksperimentu par telpas formas ietekmi uz navigācijas spējām, un šajā eksperimentā es arī aicinu Jūs piedalīties.\n\nEksperimenta mērķis ir atrast labirintā 3 paslēptus objektus un pēc tam atgriezties starta punktā. Pirms paša eksperimenta uzsākšanas notiks īsa apmācība, kuras gaitā Jūs tiksiet iepazīstināti ar visu nepieciešamo informāciju. Pats eksperiments neaizņems vairāk par 10 minūtēm.\n\nLūdzu, aizpildiet īso anķetu. Ja vēlaties, varat atstāt savu e-pasta adresi, lai saņemtu pētījuma rezultātus.";
+                    return "Sveicināti! Es esmu Marija Isupova, Latvijas Universitātes Datorikas fakultātes maģistrantūras studente. Es veicu eksperimentu par telpas formas ietekmi uz navigācijas spējām, un šajā eksperimentā es arī aicinu Jūs piedalīties.\n\nEksperimenta mērķis ir atrast labirintā 3 paslēptus objektus un pēc tam atgriezties starta punktā. Pirms paša eksperimenta uzsākšanas notiks īsa apmācība, kuras gaitā Jūs tiksiet iepazīstināti ar visu nepieciešamo informāciju. Pats eksperiments neaizņems vairāk par 10 minūtēm.\n\nPēc eksperimenta beigām, lūdzu, aizpildiet īso anketu.";
                 case LocalTexts.English:
-                    return "Hello! I am Maria Isupova, a Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+                    return "Hello! I am Maria Isupova, a Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nAfter the end of the experiment, please fill in the short questionnaire.";
                 default:
-                    return "Hello! I am Maria Isupova, Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+                    return "Hello! I am Maria Isupova, Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nAfter the end of the experiment, please fill in the short questionnaire.";
             }
         }
     }
@@ -122,6 +122,70 @@ public class LocalTexts
         }
     }
 
+    public static string STRING_008
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Apsveicu, Jūs veiksmīgi izpildījāt uzdevumu! Lai pabeigtu eksperimentu, atbildiet, lūdzu, uz dažiem jautājumiem. Ja vēlaties, varat atstāt savu e-pasta adresi, lai saņemtu pētījuma rezultātus.";
+                case LocalTexts.English:
+                    return "Congratulations, you have successfully finished the task! Please fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+                default:
+                    return "Congratulations, you have successfully finished the task! Please fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+            }
+        }
+    }
+
+    public static string STRING_009
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Cik bieži Jūs lietojat navigācijas ierīces (Google Maps, Waze utt.)?";
+                case LocalTexts.English:
+                    return "How often do you use navigation tools (Google Maps, Waze, etc.)?";
+                default:
+                    return "How often do you use navigation tools (Google Maps, Waze, etc.)?";
+            }
+        }
+    }
+
+    public static string STRING_010
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Vai Jums ir krāsu redzes traucējumi?";
+                case LocalTexts.English:
+                    return "Do you have color blindness?";
+                default:
+                    return "Do you have color blindness?";
+            }
+        }
+    }
+
+        public static string STRING_011
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Paldies par piedalīšanos! Eksperiments ir pabeigts. Varat aizvērt šo logu.";
+                case LocalTexts.English:
+                    return "Thank you for participation! The experiment is completed. You may close this window now.";
+                default:
+                    return "Thank you for participation! The experiment is completed. You may close this window now.";
+            }
+        }
+    }
+
     public static string continueBtnText
     {
         get
@@ -134,6 +198,22 @@ public class LocalTexts
                     return "Continue";
                 default:
                     return "Continue";
+            }
+        }
+    }
+
+    public static string submitBtnText
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return "Iesniegt";
+                case LocalTexts.English:
+                    return "Submit";
+                default:
+                    return "Submit";
             }
         }
     }
@@ -182,6 +262,68 @@ public class LocalTexts
                     return new List<string>() { "---", "Male", "Female", "Other" };
                 default:
                     return new List<string>() { "---", "Male", "Female", "Other" };
+            }
+        }
+    }
+
+    public static List<string> navigation_tools_list
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return new List<string>()
+                    {
+                        "---",
+                        "Vairākas reizes nedēļā",
+                        "Reizi nedēļā",
+                        "Dažas reizes mēnesī",
+                        "Reizi mēnesī",
+                        "Reizi pusgadā",
+                        "Retāk par reizi pusgadā",
+                        "Nekad"
+                    };
+                case LocalTexts.English:
+                    return new List<string>()
+                    {
+                        "---",
+                        "Many times a week",
+                        "Once a week",
+                        "Few times a month",
+                        "Once a month",
+                        "Once every half-year ",
+                        "Less often than once every half-year",
+                        "Never"
+                    };
+                default:
+                    return new List<string>()
+                    {
+                        "---",
+                        "Many times a week",
+                        "Once a week",
+                        "Few times a month",
+                        "Once a month",
+                        "Once every half-year ",
+                        "Less often than once every half-year",
+                        "Never"
+                    };
+            }
+        }
+    }
+
+    public static List<string> colorblindness_list
+    {
+        get
+        {
+            switch (LocalTexts.Language)
+            {
+                case LocalTexts.Latvian:
+                    return new List<string>() { "---", "Jā, ir", "Nē, nav", "Nezinu" };
+                case LocalTexts.English:
+                    return new List<string>() { "---", "Yes", "No", "I don't know" };
+                default:
+                    return new List<string>() { "---", "Yes", "No", "I don't know" };
             }
         }
     }
@@ -392,22 +534,6 @@ public class LocalTexts
                     return "All objects are found! Now return to the starting point.";
                 default:
                     return "All objects are found! Now return to the starting point.";
-            }
-        }
-    }
-
-    public static string UI_ThankYouText
-    {
-        get
-        {
-            switch (LocalTexts.Language)
-            {
-                case LocalTexts.Latvian:
-                    return "Uzdevums ir veiksmīgi pabeigts! Paldies par piedalīšanos eksperimentā!";
-                case LocalTexts.English:
-                    return "The task is finished succesfully! Thank you for participating! You can close the window now.";
-                default:
-                    return "The task is finished succesfully! Thank you for participating! You can close the window now.";
             }
         }
     }

@@ -22,14 +22,14 @@ public class UI_LanguageSelect : MonoBehaviour
     {
         Hide();
         LocalTexts.Language = "en";
-        UI_InputWindow.Show_Static();
+        UI_InfoWindow.Show_Static();
     }
     
     void SelectLatvian()
     {
         Hide();
         LocalTexts.Language = "lv";
-        UI_InputWindow.Show_Static();
+        UI_InfoWindow.Show_Static();
     }
 
     public void Show()

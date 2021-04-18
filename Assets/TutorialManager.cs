@@ -56,7 +56,6 @@ public class TutorialManager : MonoBehaviour
         UI_CollectAllText = GameObject.Find("UI_CollectAll").GetComponentInChildren<TextMeshProUGUI>();
         UI_TutorialFinishedText = GameObject.Find("UI_TutorialFinished").GetComponentInChildren<TextMeshProUGUI>();
         UI_ReturnBackText = GameObject.Find("UI_ReturnBack").GetComponentInChildren<TextMeshProUGUI>();
-        UI_ThankYouText = GameObject.Find("UI_ThankYou").GetComponentInChildren<TextMeshProUGUI>();
         CreateLocalTexts();
     }
 
@@ -170,6 +169,5 @@ public class TutorialManager : MonoBehaviour
         UI_CollectAllText.text = LocalTexts.UI_CollectAllText;
         UI_TutorialFinishedText.text = LocalTexts.UI_TutorialFinishedText;
         UI_ReturnBackText.text = LocalTexts.UI_ReturnBackText;
-        UI_ThankYouText.text = LocalTexts.UI_ThankYouText;
     }
 }

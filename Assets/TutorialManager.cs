@@ -11,6 +11,8 @@ public class TutorialManager : MonoBehaviour
 
     public GameObject UI_RemainingItems;
 
+    public GameObject UI_MoveKeys;
+
     public GameObject myDoor;
 
     [SerializeField]
@@ -49,6 +51,7 @@ public class TutorialManager : MonoBehaviour
             tutorialItems[i].SetActive(false);
         }
         UI_RemainingItems.SetActive(false);
+        UI_MoveKeys.SetActive(false);
 
         UI_MoveMouseText = GameObject.Find("UI_MoveMouse").GetComponentInChildren<TextMeshProUGUI>();
         UI_MoveAroundText = GameObject.Find("UI_MoveAround").GetComponentInChildren<TextMeshProUGUI>();
@@ -94,6 +97,8 @@ public class TutorialManager : MonoBehaviour
             popUpIndex == 1 // Move around
         )
         {
+            UI_MoveKeys.SetActive(true);
+            
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 wentLeft = true;

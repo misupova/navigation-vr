@@ -14,7 +14,10 @@ public class CollectItems : MonoBehaviour
     public GameObject UI_RemainingItems;
 
     public GameObject UI_ReturnBack;
+
     public GameObject finishPlane;
+
+    public Material successGreen;
 
     [SerializeField]
     float waitTime = 10f;
@@ -57,6 +60,7 @@ public class CollectItems : MonoBehaviour
             ParticleSystem ps =
                 GameObject.Find(other.GetComponent<Collider>().gameObject.name).GetComponent<ParticleSystem>();
             ps.Play();
+            GameObject.Find(other.GetComponent<Collider>().gameObject.name).GetComponent<Renderer>().material = successGreen;
         }
 
         if (other.CompareTag("Respawn"))
@@ -73,6 +77,7 @@ public class CollectItems : MonoBehaviour
             ParticleSystem ps =
                 GameObject.Find(other.GetComponent<Collider>().gameObject.name).GetComponent<ParticleSystem>();
             ps.Play();
+            GameObject.Find(other.GetComponent<Collider>().gameObject.name).GetComponent<Renderer>().material = successGreen;
         }
     }
 }

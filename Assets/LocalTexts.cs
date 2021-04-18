@@ -371,7 +371,7 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Apmācība ir pabeigta! Eksperiments sāksies tajā brīdī, kad iziesiet ārā no durvīm. Atcerieties, ka mērķis ir atrast labirintā visus 3 objektus un atgriezties atpakaļ. Laiks nav ierobežots.";
+                    return "Apmācība ir pabeigta! Eksperiments sāksies tajā brīdī, kad iziesiet ārā pa durvīm. Atcerieties, ka mērķis ir atrast labirintā visus 3 objektus un atgriezties atpakaļ. Laiks nav ierobežots.";
                 case LocalTexts.English:
                     return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this maze and to return back. There is no time limit.";
                 default:

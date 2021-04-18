@@ -201,6 +201,7 @@ public class LocalTexts
                         "1-2 stundas nedēļā",
                         "2-4 stundas nedēļā",
                         "4-7 stundas nedēļā",
+                        "7-12 stundas nedēļā",
                         "12-20 stundas nedēļā",
                         "Vairāk par 20 stundām nedēļā"
                     };
@@ -213,6 +214,7 @@ public class LocalTexts
                         "1-2 hours a week",
                         "2-4 hours a week",
                         "4-7 hours a week",
+                        "7-12 hours a week",
                         "12-20 hours a week",
                         "More than 20 hours a week"
                     };
@@ -225,6 +227,7 @@ public class LocalTexts
                         "1-2 hours a week",
                         "2-4 hours a week",
                         "4-7 hours a week",
+                        "7-12 hours a week",
                         "12-20 hours a week",
                         "More than 20 hours a week"
                     };
@@ -242,7 +245,7 @@ public class LocalTexts
                     return new List<string>()
                     {
                         "---",
-                        "Zemāka par vidusskolas izglītību",
+                        "Pamatizglītība vai zemāk",
                         "Vidējā izglītība",
                         "Nepabeigta augstākā izglītība",
                         "Arodizglītība vai profesionālā vidējā izglītība",
@@ -320,11 +323,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Izmantojiet W A S D pogas (uz priekšu, pa labi, atpakaļ, pa kreisi atbilstoši) vai pogas ar bultām, lai pārvietotos.";
+                    return "Izmantojiet ↑ ← ↓ → pogas vai W A S D pogas (uz priekšu, pa labi, atpakaļ, pa kreisi atbilstoši), lai pārvietotos.";
                 case LocalTexts.English:
-                    return "Use W A S D keys (forward, right, backward and left accordingly) or arrow keys to move around.";
+                    return "Use ↑ ← ↓ → arrow keys or W A S D keys (forward, right, backward and left accordingly) to move around.";
                 default:
-                    return "Use W A S D keys (forward, right, backward and left accordingly) or arrow keys to move around.";
+                    return "Use ↑ ← ↓ → arrow keys or W A S D keys (forward, right, backward and left accordingly) to move around.";
             }
         }
     }

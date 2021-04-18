@@ -17,11 +17,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Sveicināti! Es esmu Marija Isupova, Latvijas Universitātes Datorikas fakultātes maģistrantūras studente. Es veicu eksperimentu par telpas formas ietekmi uz navigācijas spējām, un šajā eksperimentā es arī aicinu Jūs piedalīties.\n\nEksperimenta mērķis ir atrast labirintā 3 paslēptus objektus, un pēc tam atgriezties starta punktā. Pirms paša eksperimenta uzsākšanas notiks īsa apmācība, kuras gaitā Jūs tiksiet iepazīstināti ar visu nepieciešamo informāciju. Pats eksperiments neaizņems vairāk par 10 minūtēm.\n\nLūdzu, aizpildiet īso anķetu. Ja vēlaties, varat atstāt savu e-pasta adresi, lai saņemtu pētījuma rezultātus.";
+                    return "Sveicināti! Es esmu Marija Isupova, Latvijas Universitātes Datorikas fakultātes maģistrantūras studente. Es veicu eksperimentu par telpas formas ietekmi uz navigācijas spējām, un šajā eksperimentā es arī aicinu Jūs piedalīties.\n\nEksperimenta mērķis ir atrast labirintā 3 paslēptus objektus un pēc tam atgriezties starta punktā. Pirms paša eksperimenta uzsākšanas notiks īsa apmācība, kuras gaitā Jūs tiksiet iepazīstināti ar visu nepieciešamo informāciju. Pats eksperiments neaizņems vairāk par 10 minūtēm.\n\nLūdzu, aizpildiet īso anķetu. Ja vēlaties, varat atstāt savu e-pasta adresi, lai saņemtu pētījuma rezultātus.";
                 case LocalTexts.English:
-                    return "Hello! I am Maria Isupova, Master's student from University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the labyrinth and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the shortr questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+                    return "Hello! I am Maria Isupova, a Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
                 default:
-                    return "Hello! I am Maria Isupova, Master's student from University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the labyrinth and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the shortr questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
+                    return "Hello! I am Maria Isupova, Master's student at the University of Latvia. I'm conducting the experiment regarding the effect of environment on spatial naviagations skills, and I ask you to take part in this experiment.\n\nThe goal of this experiment is to find 3 items in the maze and return to the starting point. In the beginning there will be a short tutorial, explaining all necessary information. The experiment itself shouldn't take more than 10 minutes.\n\nPlease, fill in the short questionnaire. If you wish, you can leave an e-mail address to receive the results of this experiment.";
             }
         }
     }
@@ -81,11 +81,11 @@ public class LocalTexts
             switch (LocalTexts.Language)
             {
                 case LocalTexts.Latvian:
-                    return "Videospēļu spēlēšanas stundas nedēļā (arī uz mobīlā telefona)";
+                    return "Cik stundas nedēļā Jūs spēlējat videospēles (arī uz mobilā telefona)";
                 case LocalTexts.English:
-                    return "Videogame play time per week (including mobile games)";
+                    return "Hours per week playing videogames (including mobile games)";
                 default:
-                    return "Videogame play time per week (including mobile games)";
+                    return "Hours per week playing videogames (including mobile games)";
             }
         }
     }
@@ -179,9 +179,9 @@ public class LocalTexts
                 case LocalTexts.Latvian:
                     return new List<string>() { "---", "Vīrietis", "Sieviete", "Cits" };
                 case LocalTexts.English:
-                    return new List<string>() { "---", "Man", "Woman", "Other" };
+                    return new List<string>() { "---", "Male", "Female", "Other" };
                 default:
-                    return new List<string>() { "---", "Man", "Woman", "Other" };
+                    return new List<string>() { "---", "Male", "Female", "Other" };
             }
         }
     }
@@ -338,9 +338,9 @@ public class LocalTexts
                 case LocalTexts.Latvian:
                     return "Eksperimenta gaitā būs nepieciešams labirintā atrast 3 objektus un pieskarties tiem. Pamēģiniet pieskarties vienam no objektiem.";
                 case LocalTexts.English:
-                    return "During the experiment you would need to collect 3 items in the labyrinth and touch them. Try to touch one of the objects in this room.";
+                    return "During the experiment you would need to collect 3 items in the maze and touch them. Try to touch one of the objects in this room.";
                 default:
-                    return "During the experiment you would need to collect 3 items in the labyrinth and touch them. Try to touch one of the objects in this room.";
+                    return "During the experiment you would need to collect 3 items in the maze and touch them. Try to touch one of the objects in this room.";
             }
         }
     }
@@ -370,9 +370,9 @@ public class LocalTexts
                 case LocalTexts.Latvian:
                     return "Apmācība ir pabeigta! Eksperiments sāksies tajā brīdī, kad iziesiet ārā no durvīm. Atcerieties, ka mērķis ir atrast labirintā visus 3 objektus un atgriezties atpakaļ. Laiks nav ierobežots.";
                 case LocalTexts.English:
-                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this labyrinth and to return back. There is no time limit.";
+                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this maze and to return back. There is no time limit.";
                 default:
-                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this labyrinth and to return back. There is no time limit.";
+                    return "The tutorial is finished! The experiment will begin in the moment you go out the door. Remember that the goal is to collect 3 objects in this maze and to return back. There is no time limit.";
             }
         }
     }

@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +20,13 @@ public class UI_InfoWindow : MonoBehaviour
     private TextMeshProUGUI continueBtnText;
 
     private TextMeshProUGUI STRING_001;
+
+    private int nextLevel;
+
+    void Start()
+    {
+        StartCoroutine(GetText());
+    }
 
     void Awake()
     {
@@ -37,7 +46,7 @@ public class UI_InfoWindow : MonoBehaviour
     {
         Hide();
         Invoke("UI_InputWindow.Show_Static", 2);
-        SceneManager.LoadScene(RandomNumber(1, 3));
+        SceneManager.LoadScene (nextLevel);
     }
 
     private void CreateLocalTexts()
@@ -47,9 +56,32 @@ public class UI_InfoWindow : MonoBehaviour
         continueBtnText.text = LocalTexts.continueBtnText;
     }
 
-    private int RandomNumber(int min, int max)
+    IEnumerator GetText()
     {
-        return _random.Next(min, max);
+        using (
+            UnityWebRequest www =
+                UnityWebRequest.Get("https://navigation-experiment-server-xn9eu.ondigitalocean.app/generate_level")
+        )
+        {
+            yield return www.Send();
+
+            Debug.Log (www);
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                // Show results as text
+                Debug.Log(www.downloadHandler.text);
+
+                nextLevel = Int16.Parse(www.downloadHandler.text);
+
+                // Or retrieve results as binary data
+                byte[] results = www.downloadHandler.data;
+            }
+        }
     }
 
     private void Show()

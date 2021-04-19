@@ -30,6 +30,14 @@ public class PlayerData
 
     public string navigationTools;
 
+    public int screenHeight;
+
+    public int screenWidth;
+
+    public float screenHeightInch;
+
+    public float screenWidthInch;
+
     public string Stringify()
     {
         return JsonUtility.ToJson(this);

@@ -16,8 +16,8 @@ public class InputTracker : MonoBehaviour
     public int frameInterfal = 4;
 
     private string XMLString;
-    private PlayerData _playerData;
 
+    private PlayerData _playerData;
 
     public class Movement
     {
@@ -56,6 +56,10 @@ public class InputTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(Screen.height);
+        Debug.Log(Screen.width);
+        Debug.Log(Screen.height / Screen.dpi);
+        Debug.Log(Screen.width / Screen.dpi);
         Transform playerTrans = this.transform;
         Transform camera = playerTrans.Find("FirstPersonCharacter");
     }
@@ -111,8 +115,6 @@ public class InputTracker : MonoBehaviour
         serialiser.Serialize (sw, movements);
         XMLString = sw.ToString();
 
-        
-
         _playerData = new PlayerData();
 
         _playerData.playerId = UI_InfoWindow.playerId;
@@ -120,6 +122,10 @@ public class InputTracker : MonoBehaviour
         _playerData.isFinished = true;
         _playerData.createdAt = DateTime.Now.ToString();
         _playerData.level = SceneManager.GetActiveScene().name;
+        _playerData.screenHeight = Screen.height;
+        _playerData.screenWidth = Screen.width;
+        _playerData.screenHeightInch = Screen.height / Screen.dpi;
+        _playerData.screenWidthInch = Screen.width / Screen.dpi;
 
         StartCoroutine(Upload(_playerData.Stringify(),
         result =>
@@ -127,13 +133,16 @@ public class InputTracker : MonoBehaviour
             Debug.Log (result);
             SceneManager.LoadScene(3);
         }));
-
-        
     }
+
 
     IEnumerator Upload(string profile, System.Action<bool> callback = null)
     {
-        using (UnityWebRequest request = new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data", "POST"))
+        using (
+            UnityWebRequest request =
+                new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data",
+                    "POST")
+        )
         {
             request.SetRequestHeader("Content-Type", "application/json");
             byte[] bodyRaw = Encoding.UTF8.GetBytes(profile);

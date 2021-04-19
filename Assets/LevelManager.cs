@@ -14,8 +14,6 @@ public class LevelManager : MonoBehaviour
     {
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         maxLevel = SceneManager.sceneCount;
-
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame

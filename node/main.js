@@ -19,7 +19,7 @@ server.use(cors())
 
 function clean(obj) {
   for (var propName in obj) {
-    if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
+    if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "" || obj[propName] === 0) {
       delete obj[propName];
     }
   }
@@ -56,6 +56,10 @@ server.put('/movement_data/:playerId', async (request, response, next) => {
     console.log(e)
     response.status(500).send({ message: e.message })
   }
+})
+
+server.get('/generate_level', (req, res) => {
+  res.send(String(Math.floor(Math.random() * 2) + 1));
 })
 
 server.listen('3000', async () => {

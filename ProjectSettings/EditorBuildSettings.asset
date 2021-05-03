@@ -5,16 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GreetingsWindow.unity
     guid: 29be393d4d8f700469230ff91e70e8d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Symmetric Level.unity
     guid: b2ce7c83edcafeb42881b477eff9f753
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Asymmetric Level.unity
     guid: 918172b8bcd6a9c4581728cdb7b4b992
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InputWindow.unity
     guid: 2720f5279f6cc724c851402a9e002617
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/VR/Symmetric Level VR.unity
+    guid: b080babf4b6bb004d801c2d1d5fe5c2d
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 691bd889bde979845bcbc108a61152f7,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 46422966c8599fb4384efb5c5e4578c4,
+      type: 2}

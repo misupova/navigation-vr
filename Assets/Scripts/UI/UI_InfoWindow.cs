@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class UI_InfoWindow : MonoBehaviour
 {
-    public static string playerId = System.Guid.NewGuid().ToString();
+    // public static string playerId = System.Guid.NewGuid().ToString();
 
     private readonly System.Random _random = new System.Random();
 

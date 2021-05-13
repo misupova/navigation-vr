@@ -22,6 +22,8 @@ public class PlayerData
 
     public string playtime;
 
+    public string VR_playtime;
+
     public string email;
 
     public string education;
@@ -29,6 +31,14 @@ public class PlayerData
     public string colorblindness;
 
     public string navigationTools;
+
+    public string motionSickness;
+
+    public string instruction_difficulty;
+
+    public string felt_lost;
+
+    public string easy_way_back;
 
     public int screenHeight;
 

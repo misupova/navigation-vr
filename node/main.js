@@ -32,6 +32,7 @@ const client = new MongoClient(process.env.DB_HOST, {
 })
 
 var collection
+var collection_vr
 
 server.post('/movement_data', async (request, response, next) => {
   try {
@@ -58,6 +59,31 @@ server.put('/movement_data/:playerId', async (request, response, next) => {
   }
 })
 
+server.post('/movement_data_vr', async (request, response, next) => {
+  try {
+    console.log(request.body);
+    let result = await collection_vr.insertOne(request.body)
+    response.send(result)
+  } catch (e) {
+    console.log(e)
+    response.status(500).send({ message: e.message })
+  }
+})
+
+server.put('/movement_data_vr/:playerId', async (request, response, next) => {
+  try {
+    console.log(request.body);
+    let result = await collection_vr.updateOne(
+      { playerId: request.params.playerId },
+      { $set: clean(request.body) },
+    )
+    response.send(result)
+  } catch (e) {
+    console.log(e)
+    response.status(500).send({ message: e.message })
+  }
+})
+
 server.get('/generate_level', (req, res) => {
   res.send(String(Math.floor(Math.random() * 2) + 1));
 })
@@ -67,6 +93,7 @@ server.listen('3000', async () => {
     await client.connect()
 
     collection = client.db('navigation-vr').collection('movement_data')
+	collection_vr = client.db('navigation-vr').collection('movement_data_vr')
 
     console.log('Listening at :3000...')
   } catch (e) {

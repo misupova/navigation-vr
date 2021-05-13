@@ -117,7 +117,7 @@ public class InputTracker : MonoBehaviour
 
         _playerData = new PlayerData();
 
-        _playerData.playerId = UI_InfoWindow.playerId;
+        _playerData.playerId = TutorialManager.playerId;
         _playerData.XMLString = XMLString;
         _playerData.isFinished = true;
         _playerData.createdAt = DateTime.Now.ToString();
@@ -131,7 +131,7 @@ public class InputTracker : MonoBehaviour
         result =>
         {
             Debug.Log (result);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(1);
         }));
     }
 
@@ -140,7 +140,7 @@ public class InputTracker : MonoBehaviour
     {
         using (
             UnityWebRequest request =
-                new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data",
+                new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data_vr",
                     "POST")
         )
         {

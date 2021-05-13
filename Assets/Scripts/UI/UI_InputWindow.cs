@@ -176,7 +176,7 @@ public class UI_InputWindow : MonoBehaviour
         {
             _playerData = new PlayerData();
 
-            _playerData.playerId = UI_InfoWindow.playerId;
+            _playerData.playerId = TutorialManager.playerId;
             _playerData.country = UI_InputWindow.country;
             _playerData.gender = UI_InputWindow.gender;
             _playerData.age = UI_InputWindow.age;
@@ -200,8 +200,8 @@ public class UI_InputWindow : MonoBehaviour
     {
         using (
             UnityWebRequest request =
-                new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data/" +
-                    UI_InfoWindow.playerId,
+                new UnityWebRequest("https://navigation-experiment-server-xn9eu.ondigitalocean.app/movement_data_vr/" +
+                    TutorialManager.playerId,
                     "PUT")
         )
         {

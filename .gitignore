@@ -71,6 +71,7 @@ crashlytics-build.properties
 
 # Ignore movement logs
 MovementLogs/
+capsule_logs/
 
 # Node.js
 node_modules/
